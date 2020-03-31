@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { makeStyles,fade,ThemeProvider, withStyles,createMuiTheme} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Container from '@material-ui/core/Container';
@@ -19,10 +20,18 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 import InputBase from '@material-ui/core/InputBase';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Paper from '@material-ui/core/Paper';
+// import InputBase from '@material-ui/core/InputBase';
+// import Divider from '@material-ui/core/Divider';
+// import IconButton from '@material-ui/core/IconButton';
+// import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
+import Notifications from '@material-ui/icons/Notifications';
+import Avatar from '@material-ui/core/Avatar';
 
 const BootstrapInput = withStyles(theme => ({
   root: {
@@ -88,6 +97,28 @@ const useStyles = makeStyles(theme => ({
   hide: {
     display: 'none',
   },
+  root1: {
+    padding: '2px 4px',
+    display: 'flex',
+    alignItems: 'center',
+    width: 200,
+    backgroundColor:'rgba(4, 6, 8, 0.699)',
+    marginLeft:'25%',
+    
+  },
+  input1: {
+    marginLeft: theme.spacing(1),
+    flex: 1,
+    color:'white',
+  },
+  iconButton: {
+    padding: 10,
+    color:'white',
+  },
+  divider: {
+    height: 28,
+    margin: 4,
+  },
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
@@ -125,7 +156,27 @@ const useStyles = makeStyles(theme => ({
   margin:{
     color:'rgb(55, 46, 134)',
 
-  }
+  },
+  input:{
+    marginLeft:'20px',
+  },
+  position:{
+    width:'100%',
+    padding:'10px 0',
+    margin:'8px 0',
+  },
+  Button:{
+    borderRadius:'30px',
+    padding:'10px 20px',
+  },
+  iconNotification:{
+    color:'white',
+    marginLeft:'30%',
+  },
+  Avatar:{
+    marginLeft:'30px',
+  },
+ 
 }));
 const theme = createMuiTheme({
   palette: {
@@ -136,6 +187,10 @@ const theme = createMuiTheme({
     primary: {
       // This is green.A700 as hex.
       main: 'rgb(36, 36, 48)',
+    }, 
+    default: {
+      // This is green.A700 as hex.
+      main:'rgb(55, 46, 134)',
     }, 
   },
 });
@@ -177,6 +232,25 @@ export default function CreateVote() {
           <Typography variant="h5" noWrap color="secondary"> 
             Softvote
           </Typography>
+          <Paper component="form" className={classes.root1}>
+          <InputBase
+            className={classes.input1}
+            placeholder="Searching"
+            inputProps={{ 'aria-label': 'search google maps' }}
+          />
+          <IconButton type="submit" className={classes.iconButton} aria-label="search">
+            <SearchIcon />
+          </IconButton>
+        </Paper>
+        <IconButton className={classes.iconNotification} aria-label="search">
+            <Notifications />
+        </IconButton>
+        <div className={classes.Avatar1}>
+        <Avatar alt="Remy Sharp" src=""  className={classes.Avatar}/>
+        <span>Mugorozi Francois</span>
+        </div>
+      
+         
         </Toolbar>
       </AppBar>
       <Drawer
@@ -248,27 +322,45 @@ export default function CreateVote() {
         </Grid>
             <Grid item xs={6}>
             <FormControl className={classes.margin} color="primary">
-            <InputLabel shrink htmlFor="bootstrap-input" className={classes.Signin}>
-              UserName
+            <InputLabel shrink htmlFor="bootstrap-input" >
+              Positions
             </InputLabel>
-            <BootstrapInput id="bootstrap-input"  />
+            <BootstrapInput  placeholder="Enter the position 1" className={classes.position} />
           </FormControl>
+          <br></br>
+          <FormControl className={classes.margin}>
+            <BootstrapInput id="bootstrap-input" placeholder="Enter the candidate 1" className={classes.input} />
+          </FormControl>
+          <br></br>
+          <FormControl className={classes.margin}>
+            <BootstrapInput id="bootstrap-input" placeholder="Enter the candidate 2" className={classes.input} />
+          </FormControl>
+          <br></br>
+          <br></br>
+          <Button  variant="contained" color="primary" className={classes.input}>Add more candidate</Button>
           <br></br>
           <br></br>
         <FormControl className={classes.margin}>
             <InputLabel shrink htmlFor="bootstrap-input" className={classes.Signin}>
-              Password
+              {/* Password */}
             </InputLabel>
-            <BootstrapInput id="bootstrap-input" type="password" />
+            <BootstrapInput  id="bootstrap-input" placeholder="Enter the position 2"/>
+          </FormControl>
+          <br></br>
+          <FormControl className={classes.margin}>
+            <BootstrapInput id="bootstrap-input" placeholder="Enter the candidate 1" className={classes.input} />
+          </FormControl>
+          <br></br>
+          <FormControl className={classes.margin}>
+            <BootstrapInput id="bootstrap-input" placeholder="Enter the candidate 2" className={classes.input} />
           </FormControl>
           <br></br>
           <br></br>
-        <FormControl className={classes.margin}>
-            <InputLabel shrink htmlFor="bootstrap-input" className={classes.Signin}>
-              Password
-            </InputLabel>
-            <BootstrapInput  id="bootstrap-input" type="password" />
-          </FormControl>
+          <Button  variant="contained" color="primary" className={classes.input}>Add more candidate</Button>
+          <br></br>
+          <br></br>
+          <Button  variant="contained" color="primary" className={classes.Button}>Starting vote</Button>
+          <Button  variant="contained" color="primary" className={classes.Button}>Close</Button>
             </Grid>
         </Grid>
     </Container>
