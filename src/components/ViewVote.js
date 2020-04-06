@@ -3,10 +3,8 @@ import clsx from 'clsx';
 import { makeStyles,fade,ThemeProvider, withStyles,createMuiTheme} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Container from '@material-ui/core/Container';
 import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
@@ -19,16 +17,15 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import InputBase from '@material-ui/core/InputBase';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-// import InputBase from '@material-ui/core/InputBase';
-// import Divider from '@material-ui/core/Divider';
-// import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import Notifications from '@material-ui/icons/Notifications';
 import Avatar from '@material-ui/core/Avatar';
@@ -179,8 +176,22 @@ const useStyles = makeStyles(theme => ({
   root3: {
     flexGrow: 1,
   },
+  table: {
+    minWidth: 650,
+  },
  
 }));
+function createData(name, calories, fat, carbs, protein) {
+    return { name, calories, fat, carbs, protein };
+  }
+  
+  const rows = [
+    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+    createData('Eclair', 262, 16.0, 24, 6.0),
+    createData('Cupcake', 305, 3.7, 67, 4.3),
+    createData('Gingerbread', 356, 16.0, 49, 3.9),
+  ];
 const theme = createMuiTheme({
   palette: {
     secondary: {
@@ -227,7 +238,7 @@ const PrettoSlider = withStyles({
   },
 })(Slider);
 
-export default function CreateVote() {
+export default function ViewVote() {
   const classes = useStyles();
   // const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -324,70 +335,38 @@ export default function CreateVote() {
         })}
       >
         {/* <div className={classes.drawerHeader} /> */}
-        <div className={classes.root3}>
-        <Grid container spacing={10}>
-        <Grid item xs>
-          <Paper className={classes.paper}>
-              <h2>Basic Account</h2>
-              <ol>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-              </ol>
-          </Paper>
-        </Grid>
-        <Grid item xs>
-          <Paper className={classes.paper}>
-              <h2>Basic Account</h2>
-              <Typography gutterBottom>pretto.fr</Typography>
-              <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={20} />
-          </Paper>
-        </Grid>
-        <Grid item xs>
-          <Paper className={classes.paper}>
-              <h2>Basic Account</h2>
-              <ol>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-              </ol>
-          </Paper>
-        </Grid>
-        <Grid item xs>
-          <Paper className={classes.paper}>
-              <h2>Basic Account</h2>
-              <ol>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-                  <li><a href="/"> Feature 1</a></li>
-              </ol>
-          </Paper>
-        </Grid>
-       </Grid>
-  
-            </div>
-      
+     <div>
+     <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Vote Name</TableCell>
+            <TableCell align="right">Position</TableCell>
+            <TableCell align="right">Candidate</TableCell>
+            <TableCell align="right">Voters</TableCell>
+            <TableCell align="right">Winner</TableCell>
+            <TableCell align="right">Scores</TableCell>
+            <TableCell align="right">Date</TableCell>
+            <TableCell align="right">Invigilator</TableCell>
+            <TableCell align="right">Status</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow key={row.name}>
+              <TableCell component="th" scope="row">
+                {row.name}
+              </TableCell>
+              <TableCell align="right">{row.calories}</TableCell>
+              <TableCell align="right">{row.fat}</TableCell>
+              <TableCell align="right">{row.carbs}</TableCell>
+              <TableCell align="right">{row.protein}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+     </div>
       </main>
       </ThemeProvider>
     </div>

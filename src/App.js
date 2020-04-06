@@ -5,6 +5,8 @@ import Login from './components/Login'
 import Register from './components/Register'
 import AccountType from './components/AccountType'
 import CreateVote from './components/CreateVote'
+import LatestVote from './components/Latestvote'
+import ViewVote from './components/ViewVote'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 
@@ -23,6 +25,8 @@ class App extends Component {
           <Route path="/Register" component={Register}/>
           <Route path="/AccountType" component={AccountType}/>
           <Route path="/CreateVote" component={CreateVote}/>
+          <Route path="/Latestvote" component={LatestVote}/>
+          <Route path="/Viewvote" component={ViewVote}/>
         </Switch>
       </BrowserRouter>   
       </header>

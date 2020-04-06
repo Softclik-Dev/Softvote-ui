@@ -161,9 +161,7 @@ const useStyles = makeStyles(theme => ({
     marginLeft:'20px',
   },
   position:{
-    width:'100%',
-    padding:'10px 0',
-    margin:'8px 0',
+    width:400,
   },
   Button:{
     borderRadius:'30px',
@@ -296,7 +294,7 @@ export default function CreateVote() {
         <Container maxWidth="md">
         <h3 className={classes.h3}>CREATE VOTE</h3>
         <Grid container spacing={3}>
-        <Grid item xs={6}>
+        <Grid item xs>
         <FormControl className={classes.margin} >
             <InputLabel shrink htmlFor="bootstrap-input" className={classes.margin}>
               Enter the name of the company/Institutionn
@@ -320,7 +318,7 @@ export default function CreateVote() {
             <BootstrapInput id="bootstrap-input" type="password" />
           </FormControl>
         </Grid>
-            <Grid item xs={6}>
+            <Grid item xs>
             <FormControl className={classes.margin} color="primary">
             <InputLabel shrink htmlFor="bootstrap-input" >
               Positions
@@ -360,7 +358,7 @@ export default function CreateVote() {
           <br></br>
           <br></br>
           <Button  variant="contained" color="primary" className={classes.Button}>Starting vote</Button>
-          <Button  variant="contained" color="primary" className={classes.Button}>Close</Button>
+          <Button  variant="contained" color="primary" className={classes.Button}><a href="/Latestvote">Close</a></Button>
             </Grid>
         </Grid>
     </Container>
