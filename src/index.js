@@ -1,8 +1,23 @@
 import React from 'react';
 import reactDom from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import reduxThunk from 'redux-thunk';
+
 import App from './App';
 import './App.css';
+import reducers from './store/reducers';
 
-const destination = document.querySelector('#root'); // html root of the app
+import axios from 'axios';
+window.axios = axios;
 
-reactDom.render(<App />, destination);
+const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
+
+const destination = document.querySelector('#root');
+
+reactDom.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  destination
+);
