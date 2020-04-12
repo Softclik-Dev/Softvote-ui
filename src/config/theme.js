@@ -1,22 +1,22 @@
+import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
-import {createMuiTheme} from '@material-ui/core/styles';
-
-
-const theme = createMuiTheme({
+const theme = responsiveFontSizes(
+  createMuiTheme({
+    spacing: 2,
     palette: {
-        type:'dark',
-        primary:'rgb(54, 181, 212)',
-        secondary:'rgb(36, 36, 48)',
-        success:{
-            light:'#81c784',
-        },
-        text:{
-            primary:'#fff'
-        },
-        background:{
-            default:'rgb(36, 36, 48)',
-        },
-        divider:'rgba(255,255,255,0,12)',
-
+      type: 'dark',
+      primary: {
+        light: '#9597a6',
+        main: '#292d39',
+        dark: '#181c28',
+      },
+      secondary: {
+        light: '#39b6ff',
+        main: '#2672b5',
+        dark: '#068aff',
+      },
     },
-  });
+  })
+);
+
+export default theme;
