@@ -15,8 +15,11 @@ const theme = responsiveFontSizes(
         main: '#2672b5',
         dark: '#068aff',
       },
+      background: {
+        paper: '#292d39',
+      },
     },
-  })
+  }),
 );
 
 export default theme;
