@@ -21,8 +21,10 @@
   "bugs": {
     "url": "https://github.com/Softclik-Team/Softvote-Frontend/issues"
   },
+  "proxy": "http://localhost:5000/api/*",
   "dependencies": {
     "@material-ui/core": "^4.9.9",
+    "@material-ui/icons": "^4.9.1",
     "axios": "^0.19.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
