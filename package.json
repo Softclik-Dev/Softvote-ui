@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "The Flont end of softvote app made with react",
   "main": "index.js",
+   "node": "12.16.1",
+    "npm": "6.14.4"
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
