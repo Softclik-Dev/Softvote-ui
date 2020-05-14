@@ -18,11 +18,9 @@ import { withStyles } from '@material-ui/core/styles';
 import { sidebarStyle } from '../../config/styles';
 import logout from '../../resources/js/logout';
 
-
 const styles = (theme) => sidebarStyle(theme);
 
 export class SideMenu extends Component {
-
   handleLogout = () => logout();
 
   render() {
@@ -69,12 +67,26 @@ export class SideMenu extends Component {
               <Typography variant='body2'>Dashboard</Typography>
             </ListItemText>
           </ListItem>
-          <ListItem className={classes.listItem} component={Link} to='/votings'>
+          <ListItem
+            className={classes.listItem}
+            component={Link}
+            to='/votes/create'>
             <ListItemIcon>
               <HowToVote />
             </ListItemIcon>
             <ListItemText>
-              <Typography variant='body2'>Votings</Typography>
+              <Typography variant='body2'>Create Voting</Typography>
+            </ListItemText>
+          </ListItem>
+          <ListItem
+            className={classes.listItem}
+            component={Link}
+            to='/votes/view'>
+            <ListItemIcon>
+              <HowToVote />
+            </ListItemIcon>
+            <ListItemText>
+              <Typography variant='body2'>View Votings</Typography>
             </ListItemText>
           </ListItem>
           <ListItem className={classes.listItem} component={Link} to='/account'>

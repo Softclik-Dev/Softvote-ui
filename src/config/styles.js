@@ -31,9 +31,9 @@ export const authStyles = (theme) => {
     error: {
       color: '#fc9283',
     },
-    progress:{
-      position:'absolute',
-    }
+    progress: {
+      position: 'absolute',
+    },
   };
 };
 
@@ -171,6 +171,68 @@ export const sidebarStyle = (theme) => {
       background: '#292d39',
       width: '250px',
       overflowY: 'auto',
+    },
+  };
+};
+
+export const createVoteStyle = (theme) => {
+  return {
+    main: {
+      padding: 20,
+      marginBottom: 20,
+      marginTop: 20,
+      flexGrow: 1,
+      overflowY: 'auto',
+    },
+    content: {
+      padding: 10,
+      background: '#efefef',
+      marginBottom: 15,
+    },
+    paper: {
+      background: '#fff',
+      padding: 10,
+      marginBottom: 10,
+    },
+    submitBtn: {
+      padding: '10px 80px',
+    },
+    input: {
+      marginBottom: 20,
+      
+    },
+    save: {
+      textTransform: 'capitalize',
+      padding: '10px 60px',
+    },
+  };
+};
+
+export const textBoxStyle = (theme) => {
+  return {
+    container: {
+      display: 'flex',
+      flexDirection: 'column',
+      marginBottom: 8,
+    },
+    label: {
+      color: '#2343a3',
+    },
+    input: {
+      borderRadius: 4,
+      background: 'rgba(55,68,83,0.5)',
+      border: 'none',
+      fontSize: 16,
+      padding: '10px 12px',
+      color: 'white',
+      transition: theme.transitions.create(['Border-color', 'box-shadow']),
+      '&:focus': {
+        borderColor: theme.palette.primary.main,
+      },
+    },
+    helper: {
+      color: '#a33a68',
+      fontSize: '0.8rem',
     },
   };
 };

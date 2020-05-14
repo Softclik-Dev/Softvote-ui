@@ -3,23 +3,27 @@
   "version": "1.0.0",
   "description": "The Flont end of softvote app made with react",
   "main": "index.js",
+  "engines": {
+    "node": "12.16.1",
+    "npm": "6.14.4"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild":"npm start"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Softclik-Team/Softvote-Frontend.git"
+    "url": "https://github.com/Softclik-Dev/Softvote-ui.git"
   },
   "author": "Softclik",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Softclik-Team/Softvote-Frontend/issues"
+    "url": "https://github.com/Softclik-Dev/Softvote-ui.git/issues"
   },
   "proxy": "http://localhost:5000/api/*",
   "dependencies": {

@@ -12,6 +12,7 @@ import Login from './components/Login';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import SideMenu from './components/common/SideMenu';
+import Create from './components/votes/Create';
 
 class App extends Component {
   componentDidMount() {
@@ -31,6 +32,7 @@ class App extends Component {
                 <Route exact path='/' component={Home} />
                 <Route exact path='/signup' component={Signup} />
                 <Route exact path='/login' component={Login} />
+                <Route exact path='/votes/create' component={Create} />
               </Switch>
             </div>
             <div style={{ ...theme.mixins.toolbar }}></div>
